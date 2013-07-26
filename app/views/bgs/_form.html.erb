@@ -1,0 +1,10 @@
+<div class="alert alert-error">
+  <h4 class="pagination-centered">Bugs</h4>
+</div>
+
+<%= simple_form_for @bg, :url => { :action => :create, :id => @pj.id }  do |f| %>
+<%= f.input :bname, :label => "Name :" %>
+<%= f.input :priority, :label => "Priority :"%>
+<%= f.button :submit, 'Save', :class => 'btn btn-huge btn-info btn-embossed mlm' %>
+<% end %>
+<hr />

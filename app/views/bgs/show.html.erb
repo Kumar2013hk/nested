@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @bg.bname %>
+</p>
+
+<p>
+  <b>priority:</b>
+  <%= @bg.priority %>
+</p>
+
+
+<%= link_to 'Edit', edit_bg_path(@bg) %> |
+<%= link_to 'Back', bgs_path %>

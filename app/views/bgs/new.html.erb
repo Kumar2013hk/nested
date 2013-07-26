@@ -1,0 +1,30 @@
+<h5>Project Name :<%= @pj.pname %>(<%= link_to "back",new_pj_path %>)</h5> 
+<%= render 'form' %><br/>
+<h4 align="center"><caption>List Of Bugs For This Project</caption></h4>
+<table class="table table-hover">
+       <% if @pj.bgs.exists? %>
+    <tr>
+    <th>Bug Name</th>
+    <th>Priority</th>
+    <th>Created On</th>
+    <th>Last Update</th>
+    <th> </th>
+     
+  </tr>
+<% for item in @pj.bgs %>
+<% if !item.bname.nil? %>
+<tr>
+  <td><%= item.bname %></td>
+  <td> <%= item.priority %></td>
+  <td><%= item.created_at.strftime("%b %d, %Y") %></td>
+  <td><%= item.updated_at.strftime("%b %d, %Y") %></td>
+  <td><%= link_to 'Show', item %> 
+   <%= link_to 'Edit', edit_bg_path(item) %> 
+     <%= link_to 'destroy', item,:class => "btn btn-mini btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
+<% end %>
+<% end %> 
+<% else %>
+NO BUGS YET
+<% end %>  
+</table> 

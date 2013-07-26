@@ -1,0 +1,20 @@
+<div class="alert alert-error">
+  <h4 class="pagination-centered">Enter New Project Information</h4>
+</div>
+ <%= simple_form_for @pj do |f| %>
+ <%= f.input :pname, :label => "Project Name :"  %>
+ <%= f.label "Choose Client :" %>
+ <%= f.input :user_id %><br />
+ <%= f.button :submit, 'Save', :class => 'btn btn-huge btn-info btn-embossed mlm' %>
+
+ <% end %>
+<hr />
+<h4><u>List of all Projects</u></h4>
+ 
+<% if !@pjs.blank? %>
+<% for item in @pjs %>
+<%= link_to item.pname, :controller => :bgs, :action => :new, :id => item.id %> <br />
+<% end %>
+<% else %>
+No Projects yet
+<% end %>

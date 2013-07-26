@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  bname: MyString
+  priority: MyString
+  pj_id: 1
+
+two:
+  bname: MyString
+  priority: MyString
+  pj_id: 1
